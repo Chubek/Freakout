@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scenes/main.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Avant Jazz.ogg" type="AudioStream" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://BlockTextures/block_4.png" type="Texture" id=12]
 [ext_resource path="res://BlockTextures/block_5.png" type="Texture" id=13]
 [ext_resource path="res://BlockTextures/block_6.png" type="Texture" id=14]
+[ext_resource path="res://Fonts/Open 24 Display St.ttf" type="DynamicFontData" id=15]
+[ext_resource path="res://Scenes/restart.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/quit.gd" type="Script" id=17]
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -33,6 +36,12 @@ extents = Vector2( 32, 300 )
 [sub_resource type="RectangleShape2D" id=5]
 
 extents = Vector2( 64, 32 )
+
+[sub_resource type="DynamicFont" id=6]
+
+size = 94
+use_mipmaps = true
+font_data = ExtResource( 15 )
 
 [node name="root" type="Node2D"]
 script = ExtResource( 1 )
@@ -335,3 +344,46 @@ margin_top = 90.0
 margin_right = 1100.0
 margin_bottom = 104.0
 
+[node name="Control" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_left = 62.0
+margin_top = 64.0
+margin_right = 1135.0
+margin_bottom = 540.0
+color = Color( 0.45098, 0.231373, 0.231373, 1 )
+
+[node name="Label2" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_top = 0.32
+anchor_right = 1.0
+anchor_bottom = 0.32
+margin_left = 510.0
+margin_top = 177.2
+margin_right = 693.0
+margin_bottom = 288.2
+rect_pivot_offset = Vector2( 90, 55.5 )
+custom_fonts/font = SubResource( 6 )
+text = "DONE!"
+
+[node name="restart" type="Button" parent="Control"]
+margin_left = 550.0
+margin_top = 320.0
+margin_right = 681.0
+margin_bottom = 380.0
+text = "Restart"
+script = ExtResource( 16 )
+
+[node name="quit" type="Button" parent="Control"]
+margin_left = 550.0
+margin_top = 400.0
+margin_right = 681.0
+margin_bottom = 460.0
+text = "Quit"
+script = ExtResource( 17 )
+
+[connection signal="pressed" from="Control/restart" to="Control/restart" method="_on_restart_pressed"]
+[connection signal="pressed" from="Control/quit" to="Control/quit" method="_on_quit_pressed"]
