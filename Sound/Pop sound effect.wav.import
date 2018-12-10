@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Pop sound effect.wav-f94ae867a2d7fac7de9986a2f4e13330.sample"
+
+[deps]
+
+source_file="res://Sound/Pop sound effect.wav"
+dest_files=[ "res://.import/Pop sound effect.wav-f94ae867a2d7fac7de9986a2f4e13330.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=false
+compress/mode=1
