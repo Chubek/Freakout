@@ -1,3 +1,3 @@
 # Freakout
 
-I don't know how to end this game. Do you?
+Note: CANNOT BE EXPORTED DUE TO BEIGN MADE WITH AN ALPHA VERSION OF GODOT. COMPILE WITH 3.1. 
